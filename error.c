@@ -5,7 +5,7 @@
 ** Login   <richar_x@epitech.net>
 ** 
 ** Started on  Sat Jan 19 18:35:15 2013 theo richard
-** Last update Wed Feb 20 19:29:45 2013 lysandre corjon
+** Last update Wed Feb 20 19:36:56 2013 lysandre corjon
 */
 
 #include <string.h>
@@ -14,5 +14,5 @@
 void	my_error(char *str)
 {
   write(2, str, strlen(str));
-  return;
+  exit(42);
 }
