@@ -5,12 +5,10 @@
 ** Login   <richar_x@epitech.net>
 ** 
 ** Started on  Sat Jan 19 18:35:15 2013 theo richard
-** Last update Wed Feb 20 19:19:53 2013 theo richard
+** Last update Wed Feb 20 19:40:47 2013 theo richard
 */
 #include <unistd.h>
 #include <stdlib.h>
-#include "allum1.h"
-#include "my.h"
 
 void	my_put_error(char c)
 {
