@@ -5,41 +5,34 @@
 ** Login   <corjon_l@epitech.net>
 ** 
 ** Started on  Thu Feb 21 17:50:40 2013 lysandre corjon
-** Last update Thu Feb 21 17:50:49 2013 lysandre corjon
+** Last update Thu Feb 21 18:04:13 2013 lysandre corjon
 */
 
 #include <mlx.h>
 #include <stdio.h>
-#include "header.h"
+#include "bombyx.h"
 
-int	absolute(int value)
-{
-  if (value < 0)
-    return (value * -1);
-  return (value);
-}
-
-int	draw_on_x(t_pos  *co1, t_pos *co2, int color, t_mlx *param)
+int	draw_on_x(t_pos  *f_pos, t_pos *s_pos, int color, t_mlx *param)
 {
   int	x;
   int	y;
 
-  if (co1->x < co2->x)
+  if (f_pos->x < s_pos->x)
     {
-      x = co1->x;
-      while (x <= co2->x)
+      x = f_pos->x;
+      while (x <= s_pos->x)
 	{
-	  y = co1->y + ((co2->y-co1->y) * (x-co1->x))/(co2->x-co1->x);
+	  y = f_pos->y + ((s_pos->y-f_pos->y) * (x-f_pos->x))/(s_pos->x-f_pos->x);
 	  my_pixel_put_to_image(x, y, color, param);
 	  x++;
 	}
     }
-  if (co1->x > co2->x)
+  if (f_pos->x > s_pos->x)
     {
-      x = co2->x;
-      while (x <= co1->x)
+      x = s_pos->x;
+      while (x <= f_pos->x)
 	{
-	  y = co2->y + ((co1->y-co2->y)*(x-co2->x))/(co1->x-co2->x);
+	  y = s_pos->y + ((f_pos->y-s_pos->y)*(x-s_pos->x))/(f_pos->x-s_pos->x);
 	  my_pixel_put_to_image(x, y, color, param);
 	  x++;
 	}
@@ -47,27 +40,27 @@ int	draw_on_x(t_pos  *co1, t_pos *co2, int color, t_mlx *param)
   return (0);
 }
 
-int	draw_on_y(t_pos *co1, t_pos *co2, int color, t_mlx *param)
+int	draw_on_y(t_pos *f_pos, t_pos *s_pos, int color, t_mlx *param)
 {
   int	x;
   int	y;
 
-  if (co1->y < co2->y)
+  if (f_pos->y < s_pos->y)
     {
-      y = co1->y;
-      while (y <= co2->y)
+      y = f_pos->y;
+      while (y <= s_pos->y)
 	{
-	  x = co1->x + ((co2->x-co1->x)*(y-co1->y))/(co2->y-co1->y);
+	  x = f_pos->x + ((s_pos->x-f_pos->x)*(y-f_pos->y))/(s_pos->y-f_pos->y);
 	  my_pixel_put_to_image(x, y, color, param);
 	  y++;
 	}
     }
-  if (co1->y > co2->y)
+  if (f_pos->y > s_pos->y)
     {
-      y = co2->y;
-      while (y <= co1->y)
+      y = s_pos->y;
+      while (y <= f_pos->y)
 	{
-	  x = co2->x + ((co1->x-co2->x)*(y-co2->y))/(co1->y-co2->y);
+	  x = s_pos->x + ((f_pos->x-s_pos->x)*(y-s_pos->y))/(f_pos->y-s_pos->y);
 	  my_pixel_put_to_image(x, y, color, param);
 	  y++;
 	}
@@ -75,16 +68,16 @@ int	draw_on_y(t_pos *co1, t_pos *co2, int color, t_mlx *param)
   return (0);
 }
 
-int	draw_line(t_pos *co1, t_pos *co2, int color, t_mlx *param)
+int	draw_line(t_pos *f_pos, t_pos *s_pos, int color, t_mlx *param)
 {
-  int	xdiff;
-  int	ydiff;
+  int	x_diff;
+  int	y_diff;
 
-  xdiff = absolute(co2->x - co1->x);
-  ydiff = absolute(co2->y - co1->y);
-  if (ydiff >= xdiff)
-    draw_on_y(co1, co2, color, param);
-  else if (ydiff < xdiff)
-    draw_on_x(co1, co2, color, param);
+  x_diff = ABS(s_pos->x - f_pos->x);
+  y_diff = ABS(s_pos->y - f_pos->y);
+  if (y_diff >= x_diff)
+    draw_on_y(f_pos, s_pos, color, param);
+  else if (y_diff < x_diff)
+    draw_on_x(f_pos, s_pos, color, param);
   return (0);
 }
