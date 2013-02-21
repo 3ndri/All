@@ -1,11 +1,11 @@
 /*
-** draw_line.c for fdf in /home/letohi_f//igraph
+** draw_line.c for 106bombyx in /home/corjon_l//projets/All
 ** 
-** Made by florian letohic
-** Login   <letohi_f@epitech.net>
+** Made by lysandre corjon
+** Login   <corjon_l@epitech.net>
 ** 
-** Started on  Tue Dec  6 20:50:11 2011 florian letohic
-** Last update Sun Dec 11 16:23:10 2011 florian letohic
+** Started on  Thu Feb 21 17:50:40 2013 lysandre corjon
+** Last update Thu Feb 21 17:50:49 2013 lysandre corjon
 */
 
 #include <mlx.h>
