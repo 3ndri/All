@@ -5,17 +5,17 @@
 ** Login   <richar_x@epitech.net>
 ** 
 ** Started on  Sat Jan 19 18:35:15 2013 theo richard
-<<<<<<< HEAD
-** Last update Wed Feb 20 19:51:53 2013 theo richard
+** Last update Thu Feb 21 18:11:14 2013 lysandre corjon
 */
+
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
 
-void	my_error(char *str)
+int	my_error(char *str)
 {
   write(2, str, strlen(str));
   if (strlen(str) != 0)
     my_putchar('\n');
-  exit(42);
+  return (-42);
 }

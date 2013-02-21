@@ -5,7 +5,7 @@
 ** Login   <corjon_l@epitech.net>
 ** 
 ** Started on  Wed Feb 20 18:43:36 2013 lysandre corjon
-** Last update Wed Feb 20 19:41:25 2013 theo richard
+** Last update Thu Feb 21 18:14:39 2013 lysandre corjon
 */
 #include <stdlib.h>
 #include <stdio.h>
@@ -14,15 +14,15 @@ double		my_check(int argc, char **argv, char **env)
 {
   double	k;
 
-  if (argc == 1)
-    my_error("error: missing parameter.");
-  if (argc != 2)
-    my_error("error: too many parameters.");
+  if (argc < 2)
+    return (my_error("error: Missing parameter."));
+  if (argc > 3)
+    return (my_error("error: Too many parameters."));
   if (env[0] == NULL)
-    my_error("error: missing environment.");
+    return (my_error("error: Missing environment."));
   k = atof(argv[1]);
   if (k > 4 || k < 1)
-    my_error("error: parameter must be between 1 and 4.");
+    return (my_error("error: Parameter must be between 1 and 4."));
   return (k);
 }
 
@@ -30,7 +30,8 @@ int		main(int argc, char **argv, char **env)
 {
   double	k;
 
-  k = my_check(argc, argv, env);
+  if ((k = my_check(argc, argv, env)) < 0)
+    return (k);
   printf("k = %f\n", k);
   return (0);
 }
