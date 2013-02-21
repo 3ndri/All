@@ -5,9 +5,11 @@
 ** Login   <corjon_l@epitech.net>
 ** 
 ** Started on  Thu Feb 21 18:27:03 2013 lysandre corjon
-** Last update Thu Feb 21 18:35:21 2013 lysandre corjon
+** Last update Thu Feb 21 19:01:30 2013 lysandre corjon
 */
 
+#include <stdlib.h>
+#include <mlx.h>
 #include "bombyx.h"
 
 int	init_img(t_img *img)

@@ -5,10 +5,12 @@
 ** Login   <corjon_l@epitech.net>
 ** 
 ** Started on  Wed Feb 20 18:43:36 2013 lysandre corjon
-** Last update Thu Feb 21 18:14:39 2013 lysandre corjon
+** Last update Thu Feb 21 18:58:59 2013 lysandre corjon
 */
+
 #include <stdlib.h>
 #include <stdio.h>
+#include "bombyx.h"
 
 double		my_check(int argc, char **argv, char **env)
 {
