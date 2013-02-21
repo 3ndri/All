@@ -4,8 +4,8 @@
 ** Made by lysandre corjon
 ** Login   <corjon_l@epitech.net>
 ** 
-** Started on  Wed Feb 20 19:11:25 2013 lysandre corjon
-** Last update Thu Feb 21 18:26:28 2013 lysandre corjon
+** Started on  Thu Feb 21 18:50:44 2013 lysandre corjon
+** Last update Thu Feb 21 18:57:13 2013 lysandre corjon
 */
 
 #ifndef BOMBYX_H_
@@ -17,7 +17,7 @@
 
 typedef struct	s_pos
 {
-  int	        x;
+  int		x;
   int		y;
 }		t_pos;
 
@@ -31,5 +31,18 @@ typedef struct	s_img
   int		sizeline;
   char		*data;
 }		t_img;
+
+int	draw_on_x(t_pos  *, t_pos *, int, t_img *);
+int	draw_on_y(t_pos *, t_pos *, int, t_img *);
+int	draw_line(t_pos *, t_pos *, int, t_img *);
+int	my_error(char *);
+double	my_check(int, char **, char **);
+int	main(int, char **, char **);
+int	init_img(t_img *);
+void	my_putchar(char);
+void	my_putstr(char *);
+int	gere_expose(t_img *);
+int	gere_key(int, t_img *);
+void	put_pixel_to_image(t_img *, int, int, int);
 
 #endif /* !BOMBYX_H_ */
