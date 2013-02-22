@@ -5,7 +5,7 @@
 ** Login   <corjon_l@epitech.net>
 ** 
 ** Started on  Thu Feb 21 18:27:03 2013 lysandre corjon
-** Last update Fri Feb 22 16:44:48 2013 theo richard
+** Last update Fri Feb 22 17:07:32 2013 lysandre corjon
 */
 
 #include <stdlib.h>
@@ -15,6 +15,21 @@
 void    write_in_window(void *mlx_ptr, void *win_ptr, char *str)
 {
   mlx_string_put(mlx_ptr, win_ptr, 180, 210, 0x00FFFFFF, str);
+}
+
+int	white_window(t_img *img)
+{
+  int	x = 0;
+  int	y;
+
+  while (x <= SCREEN_W)
+    {
+      y = 0;
+      while (y <= SCREEN_H)
+	put_pixel_to_image(img, x, y++, WHITE);
+      x++;
+    }
+  return (0);
 }
 
 int	init_img(t_img *img)
@@ -27,5 +42,7 @@ int	init_img(t_img *img)
   img->win_ptr = mlx_new_window(img->mlx_ptr, SCREEN_W, SCREEN_H, "106bombyx");
   img->img_ptr = mlx_new_image(img->mlx_ptr, SCREEN_W, SCREEN_H);
   img->data = mlx_get_data_addr(img->img_ptr, &img->bpp, &img->sizeline, &img->endian);
+  white_window(img);
+  mlx_put_image_to_window(img->mlx_ptr, img->win_ptr, img->img_ptr, 0, 0);
   return (0);
 }

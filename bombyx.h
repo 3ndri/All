@@ -5,12 +5,13 @@
 ** Login   <corjon_l@epitech.net>
 ** 
 ** Started on  Thu Feb 21 18:50:44 2013 lysandre corjon
-** Last update Fri Feb 22 16:40:11 2013 theo richard
+** Last update Fri Feb 22 17:03:33 2013 lysandre corjon
 */
 
 #ifndef BOMBYX_H_
 # define BOMBYX_H_
 
+# define	WHITE		(0xFFFFFF)
 # define	SCREEN_H	(600)
 # define	SCREEN_W	(900)
 # define	ABS(Value)	((Value) < 0 ? ((Value) * (-1)) : (Value))
