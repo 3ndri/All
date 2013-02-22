@@ -5,14 +5,14 @@
 ** Login   <corjon_l@epitech.net>
 ** 
 ** Started on  Thu Feb 21 18:50:44 2013 lysandre corjon
-** Last update Thu Feb 21 18:57:13 2013 lysandre corjon
+** Last update Fri Feb 22 16:40:11 2013 theo richard
 */
 
 #ifndef BOMBYX_H_
 # define BOMBYX_H_
 
 # define	SCREEN_H	(600)
-# define	SCREEN_W	(600)
+# define	SCREEN_W	(900)
 # define	ABS(Value)	((Value) < 0 ? ((Value) * (-1)) : (Value))
 
 typedef struct	s_pos
