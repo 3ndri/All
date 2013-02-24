@@ -5,15 +5,18 @@
 ** Login   <corjon_l@epitech.net>
 ** 
 ** Started on  Thu Feb 21 18:50:44 2013 lysandre corjon
-** Last update Fri Feb 22 17:03:33 2013 lysandre corjon
+** Last update Sun Feb 24 15:54:06 2013 lysandre corjon
 */
 
 #ifndef BOMBYX_H_
 # define BOMBYX_H_
 
+# define	BLUE		(0x0000FF)
+# define	BLACK		(0x000000)
 # define	WHITE		(0xFFFFFF)
+# define	MERGE		(100)
 # define	SCREEN_H	(600)
-# define	SCREEN_W	(900)
+# define	SCREEN_W	(800)
 # define	ABS(Value)	((Value) < 0 ? ((Value) * (-1)) : (Value))
 
 typedef struct	s_pos
@@ -33,6 +36,11 @@ typedef struct	s_img
   char		*data;
 }		t_img;
 
+int	white_window(t_img *);
+int	get_max(double);
+int	calc_bomb(int, double);
+void	draw_graph(t_img *);
+double	arrond(double);
 int	draw_on_x(t_pos  *, t_pos *, int, t_img *);
 int	draw_on_y(t_pos *, t_pos *, int, t_img *);
 int	draw_line(t_pos *, t_pos *, int, t_img *);
